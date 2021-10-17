@@ -1,6 +1,7 @@
 import React, {useReducer, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
+import Event from './Event'
 const App = () => {
   const [state, dispatch] = useReducer( reducer, [])
   const [title, setTitle] = useState('')
@@ -27,7 +28,7 @@ const App = () => {
             <label htmlFor="eventbody">本文</label>
             <textarea className="form-control" id="eventbody" value={body} onChange={e=> setBody(e.target.value)}/>
           </div>
-          <button className="btn btn-primary" onclick={addEvent}>イベントを作成</button>
+          <button className="btn btn-primary" onClick={addEvent}>イベントを作成</button>
           <button className="btn btn-danger">イベントを全て削除</button>
         </form>
         <h4>イベント一覧</h4>
@@ -41,6 +42,7 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
+            { state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch} />))}
           </tbody>
         </table>
       </div>
