@@ -21,6 +21,8 @@ const App = () => {
     e.preventDefault()
     dispatch({type: 'DELETE_ALL_EVENT'})
   }
+  
+  const unCreate = title === '' || body === ''
   return (
       <div className = 'container-fluid'>
         <h4>イベント作成</h4>
@@ -33,7 +35,7 @@ const App = () => {
             <label htmlFor="eventbody">本文</label>
             <textarea className="form-control" id="eventbody" value={body} onChange={e=> setBody(e.target.value)}/>
           </div>
-          <button className="btn btn-primary" onClick={addEvent}>イベントを作成</button>
+          <button className="btn btn-primary" onClick={addEvent} disabled={unCreate}>イベントを作成</button>
           <button className="btn btn-danger" onClick={deleteAddEvent}>イベントを全て削除</button>
         </form>
         <h4>イベント一覧</h4>
