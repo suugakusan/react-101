@@ -23,6 +23,8 @@ const App = () => {
   }
   
   const unCreate = title === '' || body === ''
+  const unAllDelete = state.length === 0
+  
   return (
       <div className = 'container-fluid'>
         <h4>イベント作成</h4>
@@ -36,7 +38,7 @@ const App = () => {
             <textarea className="form-control" id="eventbody" value={body} onChange={e=> setBody(e.target.value)}/>
           </div>
           <button className="btn btn-primary" onClick={addEvent} disabled={unCreate}>イベントを作成</button>
-          <button className="btn btn-danger" onClick={deleteAddEvent}>イベントを全て削除</button>
+          <button className="btn btn-danger" onClick={deleteAddEvent} disabled={unAllDelete}>イベントを全て削除</button>
         </form>
         <h4>イベント一覧</h4>
         <table className="table table-hover">
