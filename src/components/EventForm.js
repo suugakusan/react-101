@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useReducer, useState} from 'react'
+
+import reducer from '../reducers'
 
 const EventForm =() => {
   const [state, dispatch] = useReducer( reducer, [])
@@ -42,3 +44,4 @@ const EventForm =() => {
   )
 }
 
+export default EventForm
