@@ -7,6 +7,8 @@ const App = () => {
   const [state, dispatch] = useReducer( reducer, [])
   
   return (
+    <>
+    <EventForm />
       <div className = 'container-fluid'>
         <h4>イベント一覧</h4>
         <table className="table table-hover">
@@ -23,6 +25,7 @@ const App = () => {
           </tbody>
         </table>
       </div>
+    </>
   );
 }
 
