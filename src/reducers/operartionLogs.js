@@ -6,7 +6,11 @@ import {
 const operationLogs = (state=[], action) => {
   switch (action.type) {
       case ADD_OPERATION_LOG:
-        return state
+        const operationLogs = {
+          description: action.description,
+          operatedAt: action.operatedAt
+        }
+        return [operationLogs, ...state]
       case DELETE_ALL_OPERATION_LOGS:
         return []
       default:
