@@ -1,6 +1,7 @@
-import React, { useContext } from "react"
-import OperationLog from "./OperationLog"
-import AppContext from "../contexts/AppContext"
+import React, { useContext } from 'react'
+
+import OperationLog from './OperationLog'
+import AppContext from '../contexts/AppContext'
 
 const OperationLogs = () => {
   const { state } = useContext(AppContext)
@@ -16,7 +17,7 @@ const OperationLogs = () => {
         </thead>
         <tbody>
           {
-            state.operationLogs.map((operationLog, index)=>{
+            state.operationLogs.map((operationLog, index) => {
               return <OperationLog key={index} operationLog={operationLog}/>
             })
           }

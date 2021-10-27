@@ -13,11 +13,12 @@ const Event = ({ event }) => {
   const handleClickDeleteButton = () => {
     const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？`)
     if (result) {
-      dispatch({ type: DELETE_EVENT, id }),
+      dispatch({ type: DELETE_EVENT, id })
+
       dispatch({
         type: ADD_OPERATION_LOG,
-        discription: `イベント(id=${id})を削除しました`,
-        operatedAd: timeCurrentIso8601()
+        description: `イベント(id=${id})を削除しました。`,
+        operatedAt: timeCurrentIso8601()
       })
     }
   }
