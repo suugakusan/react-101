@@ -9,6 +9,7 @@ import AppContext from '../contexts/AppContext'
 import reducer from '../reducers'
 
 const App = () => {
+  const appstate = localStorage.getItem('appWithRedux',JSON.strigify(state))
   const initialState = {
     events: [],
     operationLogs: []
@@ -16,7 +17,8 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   
   useEffect(()=>{
-    
+    const string =JSON.strigify(state)
+    localStorage.setItem('appWithRedux',string)
   },[state])
 
   return (
