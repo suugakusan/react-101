@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-
+import OperationLog from "./OperationLog"
 import AppContext from "../contexts/AppContext"
 
 const OperationLogs = () => {
@@ -17,7 +17,7 @@ const OperationLogs = () => {
         <tbody>
           {
             state.operationLogs.map((operationLog, index)=>{
-              return <OperationLog key={index}/>
+              return <OperationLog key={index} operationLog={operationLog}/>
             })
           }
         </tbody>
