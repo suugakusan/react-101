@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -14,6 +14,10 @@ const App = () => {
     operationLogs: []
   }
   const [state, dispatch] = useReducer(reducer, initialState)
+  
+  useEffect(()=>{
+    
+  },[state])
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
