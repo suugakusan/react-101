@@ -10,7 +10,7 @@ import reducer from '../reducers'
 
 const App = () => {
   const appstate = localStorage.getItem('appWithRedux',JSON.strigify(state))
-  const initialState = {
+  const initialState = appstate ? JSON.parse(appstate) : {
     events: [],
     operationLogs: []
   }
